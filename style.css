@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ee590f;
+}
+
+button {
+    width: 150px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #56dd12;
+    color: white;
+    border: none;
+    margin: 10px;
+    font-weight: bolder;
+}
+
+.img {
+    display: inline-block;
+    width: 25%;
+}
+
+p {
+    margin-top: 30px;
+    margin-left: 10px;
+    color: white;
+    text-shadow: 2px 2px black;
+    font-size: 18px
+}
+
+header {
+    color: white;
+    display: inline-block;
+}
+
+#submit {
+    width: 100px;
+    height: 40px;
+}
