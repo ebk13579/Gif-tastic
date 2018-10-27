@@ -3,16 +3,19 @@ $(document).ready(function () {
     var topics = ["Eric Cartman", "Stan Marsh", "Kyle Broflovski", "Kenny McCormick", "Butters Stotch",
         "Wendy Testaburger", "Bebe Stevens", "Craig Tucker", "Randy Marsh", "Sheila Broflovski"];
 
+    //https://developers.giphy.com/docs/ | GET /v1/gifs/search
     const apiKey = "&api_key=d9OkXAN8QyxAaCPzIFjlHfNjxAKywCGy"
 
     function displayInfo() {
         $("#images").empty();
         var character = $(this).attr("data-name");
+        //q: string | Explicit AND + OR boolean clauses in search queries are not supported.
         var api = "https://api.giphy.com/v1/gifs/search?q=" + character + apiKey;
         $.ajax({
             url: api,
             method: "GET"
         }).done(function (response) {
+            console.log("URL= " + api);
             var results = response.data;
             for (var i = 0; i < 12; i++) {
                 var gifDiv = $("<div class='item'>");
@@ -51,12 +54,12 @@ $(document).ready(function () {
     };
     $("#submit").on("click", function () {
         var character = $("#newButton").val().trim();
-
+        //Prevents user from making null string button
         if (character !== "") {
             topics.push(character);
             renderButtons();
         }
-
+        console.log("character= " + character);
         $("#newButton").val("");
         return false;
     })
