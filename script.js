@@ -10,7 +10,7 @@ $(document).ready(function () {
         $("#images").empty();
         var character = $(this).attr("data-name");
         //q: string | Explicit AND + OR boolean clauses in search queries are not supported.
-        var api = "https://api.giphy.com/v1/gifs/search?q=" + character + apiKey;
+        var api = "https://api.giphy.com/v1/gifs/search?q=" + "South Park" + "+" + character + apiKey;
         $.ajax({
             url: api,
             method: "GET"
